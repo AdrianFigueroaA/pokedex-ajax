@@ -1,0 +1,17 @@
+#pokedex{
+
+
+width: 500px;
+height: 500px;
+background: red;
+border-radius: 25px;
+border: 1px solid red;
+
+}
+
+#preguntaPokemon{
+
+
+display: flex;
+justify-content: center;
+}
