@@ -1,34 +1,50 @@
-console.log("funciona");
+function pokemon() {
+  console.log("funciona");
+  let pokemones = [];
+  let input = $("#input").val();
+  console.log(input);
+  let url = `https://pokeapi.co/api/v2/pokemon/${input}`;
+console.log(url)
+  $.ajax({
+    url,
+    success: function (result) {
+      console.log(result);
+      let poke = {
+          numero: result.id,
+          nombre: result.name,
+          tipo:result.types[0].type.name,
+          ataque: result.stats[1].base_stat,
+          vida: result.stats[0].base_stat,
+          defensa: result.stats[2].base_stat,
+          velocidad: result.stats[5].base_stat,
+          img: result.sprites.front_default,
+          img2: result.sprites.back_default
+      };
+      pokemones.push(poke);
+      console.log(pokemones);
 
-function pokemon(){
+      $("#infoPokemon").html("");
+      pokemones.forEach((p, i) => {
+          $("#infoPokemon").append(`
 
-    let boton = document.getElementById("boton");
-    let input = document.getElementById("input").value;
-    let img = document.getElementById("img");
-    let img2 = document.getElementById("img2");
-    let info = document.getElementById("informacion");
-   
-    
+      <div>
+          <p>Nombre: ${p.nombre}</p>
+          <p>Numero: ${p.numero}</p>
+          <p>Tipo: ${p.tipo}</p>
+          <p>Vida: ${p.vida}</p>
+          <p>Ataque: ${p.ataque}</p>
+          <p>Defensa: ${p.defensa}</p>
+          <p>Velocidad: ${p.velocidad}</p>
+      </div>
 
-       
-            const xhttp = new XMLHttpRequest();
-            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${input}`,true);
-            xhttp.send();
-            
-            xhttp.onreadystatechange = function() {
+       <div>
+               <img src="${p.img}"/>
+               <img src="${p.img2}"/>
+       </div>`);
+      });
 
-              if (this.readyState == 4 && this.status == 200) {
-                
-                let dato=JSON.parse( this.responseText)
-                    
-                img.setAttribute("src",dato.sprites.front_default)
-                img2.setAttribute("src",dato.sprites.back_default)
-                        
-                info.textContent=dato.name
-
-              }
-            };
-        }
+    },
+  });
+}
 
 
-       

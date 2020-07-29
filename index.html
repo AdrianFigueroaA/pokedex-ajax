@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			  crossorigin="anonymous"></script>
     <title>Pokedex</title>
 </head>
 <body>
     
 <section id="pokedex" >
-<div id="preguntaPokemon" >
 
-    <input id="input" type="text">
+    <div class="logo"></div>
 
-    <button onclick="pokemon()" id="boton">cual es ese Pokemon</button>
-    
-</div>
- 
+        <div id="preguntaPokemon" >
+            <input id="input" >
+            <button onclick=" pokemon()" id="boton">cual es ese Pokemon</button>
+        </div>
+         
+        <div id="infoPokemon">
+            <p id="nombre"></p>
+            <p id="numero"></p>
+            <p id="tipo"></p>
+            <p id="vida"></p>
+            <p id="ataque"></p>
+            <p id="defensa"></p>
+            <p id="velocidad"></p>
+        </div>
 
-<div id="imagenPokemon">
-    <p id="informacion"></p>
-    <img id="img" src="" alt="imagen Pokemon">
-    <img id="img2" src="" alt="imagen Pokemon">
-    
-</div>
-
-
-
+        <div id="imagenPokemon">
+            <img id="img" src="">
+            <img id="img2" src="">
+        </div>
 </section>
 
     <script src="index.js"></script>
