@@ -35,23 +35,14 @@ console.log(url)
           <p>Nombre: ${p.nombre}</p>
           <p>Numero: ${p.numero}</p>
           <p>Tipo: ${p.tipo}</p>
-          <p>Vida: ${p.vida}</p>
-          
       </div>
+
 
        <div>
                <img src="${p.img}"/>
                <img src="${p.img2}"/>
-       </div>
-       
-       
-        <div >
-        <p>Ataque: ${p.ataque}</p>
-          <p>Defensa: ${p.defensa}</p>
-          <p>Velocidad: ${p.velocidad}</p>
-        </div>`);
+       </div>`);
 
-        
       });
 
     },
@@ -62,7 +53,7 @@ console.log(url)
 function graficos(e) {
 console.log(e)
   var chart = new CanvasJS.Chart("chartContainer", {
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    theme: "light1", // "light1", "light2", "dark1", "dark2"
     exportEnabled: true,
     animationEnabled: true,
     title: {

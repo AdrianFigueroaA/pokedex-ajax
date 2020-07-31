@@ -1,3 +1,27 @@
+body{
+
+    background-image: url(assets/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+p{
+
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    
+
+}
+
 #pokedex{
 
 width: 500px;
@@ -22,7 +46,7 @@ h1{
 #pantalla2{
 
     width: 500px;
-    background: red;
+    background: white;
     border-radius: 25px;
     height: 500px;
     border: 3px solid darkblue;
@@ -38,10 +62,10 @@ h1{
 .logo{
 
     background-image: url(assets/img/Pokedex_tool_icon-icons.com_67529.png);
-background-position: center;
-background-repeat: no-repeat;
-height: 140px;
-background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 140px;
+    background-size: contain;
 }
 
 #imagenPokemon{
@@ -70,7 +94,10 @@ background-size: contain;
 
 #chartContainer{
 
-width: 400px;
-height: 300px;
+    width: 400px;
+    height: 300px;
+   
+    
+}
 
 }
