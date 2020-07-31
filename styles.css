@@ -1,26 +1,47 @@
 #pokedex{
 
 width: 500px;
-height: 500px;
+
 background: red;
 border-radius: 25px;
 border: 3px solid darkblue;
 }
 
+#pokedex2{
+
+
+
+}
+
+h1{
+
+
+    text-align: center;
+}
+
+#pantalla2{
+
+    width: 500px;
+    background: red;
+    border-radius: 25px;
+    height: 500px;
+    border: 3px solid darkblue;
+
+}
 
 #preguntaPokemon{
-
-
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .logo{
 
     background-image: url(assets/img/Pokedex_tool_icon-icons.com_67529.png);
-    background-position: center;
-    background-repeat: no-repeat;
+background-position: center;
+background-repeat: no-repeat;
+height: 140px;
+background-size: contain;
 }
 
 #imagenPokemon{
@@ -30,9 +51,26 @@ border: 3px solid darkblue;
 }
 
 #nombre{
-
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }
 
+#img{
+
+    width: 200px;
+
+
+}
+
+#img2{
+
+    width: 200px;
+}
+
+#chartContainer{
+
+width: 400px;
+height: 300px;
+
+}
