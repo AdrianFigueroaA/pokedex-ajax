@@ -1,5 +1,4 @@
 body{
-
     background-image: url(assets/img/fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,55 +7,56 @@ body{
 #main {
     display: flex;
     justify-content: center;
+    padding-top: 20px;
+   
+}
+
+hr {
+
+    border: 1px solid black;
+}
+
+#img {
+
+    height: 200px;
+}
+#img2{
+    height: 200px;
 
 }
 
-
-
 p{
-
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     font-weight: bold;
-    
-
 }
 
 #pokedex{
-
-width: 500px;
-
-background: red;
-border-radius: 25px;
-border: 3px solid darkblue;
-}
-
-#pokedex2{
-
-
-
+    width: 500px;
+    background: red;
+    border-radius: 25px;
+    border: 3px solid darkblue;
 }
 
 h1{
-
-
     text-align: center;
 }
 
-#pantalla2{
-
+#pokedex2{
     width: 500px;
     background: white;
     border-radius: 25px;
-    height: 500px;
     border: 3px solid darkblue;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #preguntaPokemon{
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .logo{
@@ -64,14 +64,14 @@ h1{
     background-image: url(assets/img/Pokedex_tool_icon-icons.com_67529.png);
     background-position: center;
     background-repeat: no-repeat;
-    height: 140px;
+    height: 100px;
     background-size: contain;
 }
 
 #imagenPokemon{
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    ;
 }
 
 #nombre{
@@ -80,24 +80,9 @@ h1{
     font-weight: bold;
 }
 
-#img{
-
-    width: 200px;
-
-
-}
-
-#img2{
-
-    width: 200px;
-}
 
 #chartContainer{
-
     width: 400px;
     height: 300px;
-   
-    
 }
 
-}

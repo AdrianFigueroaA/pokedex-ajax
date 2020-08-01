@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
    
     <title>Pokedex</title>
@@ -19,21 +24,14 @@
 
         <div id="preguntaPokemon" >
             <input id="input" placeholder="Ingresa Nombre o Numero " >
-            <button onclick=" pokemon()" id="boton">cual es ese Pokemon</button>
+            <button  onclick="pokemon()" id="boton" type="button" class="btn btn-light">cual es ese Pokemon</button>
         </div>
          
-        <div id="infoPokemon">
-            <p id="nombre"></p>
-            <p id="numero"></p>
-            <p id="tipo"></p>
-            <p id="vida"></p>
-            
-        </div>
+        <div id="infoPokemon"></div>
 
         <div id="imagenPokemon">
             <img id="img" src="">
             <img id="img2" src="">
-            
         </div>
 
     </div>
@@ -41,10 +39,9 @@
 
     <div id="pokedex2" >
         <div id="pantalla2">
-           
             <div id="chartContainer" ></div>
         </div>
-        
+ 
     </div>
     
 </section>
@@ -52,10 +49,8 @@
 
 
 
-<script
-src="https://code.jquery.com/jquery-3.5.1.min.js"
-integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="index.js"></script>
    
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

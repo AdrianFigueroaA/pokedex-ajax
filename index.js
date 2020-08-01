@@ -1,60 +1,106 @@
 
 
+
+
+// const ataques = ()=> {
+//   let at = [];
+//   let input = $("#input").val();
+//   let url = `https://pokeapi.co/api/v2/move/${input}`;
+
+//   console.log(url)
+
+//   $.ajax({
+//     url,
+//     success: function (pokes) {
+//       console.log(pokes);
+//       let infobatalla = {
+//               ataque1:  pokes.abilities[0].ability.name,
+//               ataque2: pokes.abilities[1].ability.name,
+//               ataque3: pokesabilities[2].ability.name
+                      
+//       }
+//           console.log(infobatalla)
+//           infobatalla.push(at)
+//           console.log(at)
+//     }
+  
+// //   });
+
+
+// // }
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
 const pokemon = ()=> {
-  console.log("funciona");
   let pokemones = [];
   let input = $("#input").val();
-  console.log(input);
   let url = `https://pokeapi.co/api/v2/pokemon/${input}`;
-console.log(url)
+
+
   $.ajax({
     url,
     success: function (result) {
-      console.log(result);
+      console.log(result)
       let poke = {
-          numero: result.id,
-          nombre: result.name,
-          tipo:result.types[0].type.name,
-          ataque: result.stats[1].base_stat,
+          nombre:result.name,
+          numero:result.id,
+          tipo: result.types[0].type.name,
           vida: result.stats[0].base_stat,
+          ataque: result.stats[1].base_stat,
           defensa: result.stats[2].base_stat,
           velocidad: result.stats[5].base_stat,
           img: result.sprites.front_default,
-          img2: result.sprites.back_default
+          img2: result.sprites.back_default,
+          ataque1: result.abilities[0].ability.name
+         
       };
+     
       pokemones.push(poke);
-      console.log(pokemones);
-      
-
       $("#infoPokemon").html("");
       graficos(pokemones)
       pokemones.forEach((p, i) => {
           $("#infoPokemon").append(`
 
       <div>
+        <hr>
           <p>Nombre: ${p.nombre}</p>
           <p>Numero: ${p.numero}</p>
-          <p>Tipo: ${p.tipo}</p>
-      </div>
+          <p>Tipo : ${p.tipo}</p>
+          
+        <hr>
+      </div>`
+      );
 
 
-       <div>
-               <img src="${p.img}"/>
-               <img src="${p.img2}"/>
-       </div>`);
+      $("#pantalla2").append(`
+
+      <div>
+        <hr>
+          <p>Ataque 1: ${p.ataque1}</p>
+          <p>Ataque 2: ${p.ataque2}</p>
+          
+        <hr>
+      </div>`
+      );
+       img.setAttribute("src",result.sprites.front_default)
+       img2.setAttribute("src",result.sprites.back_default)
 
       });
-
     },
   });
 }
 
 
+// funcion canvas 
+
 function graficos(e) {
-console.log(e)
   var chart = new CanvasJS.Chart("chartContainer", {
-    theme: "light1", // "light1", "light2", "dark1", "dark2"
-    exportEnabled: true,
+    theme: "light1", 
+    exportEnabled: false,
     animationEnabled: true,
     title: {
       text: "PokeEstadisticas!"
@@ -79,3 +125,6 @@ console.log(e)
   chart.render();
   
   }
+
+  
+
