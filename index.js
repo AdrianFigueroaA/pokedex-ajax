@@ -39,12 +39,15 @@ const pokemon = ()=> {
 
   $("#infoPokemon").html("");
   $("#pantalla2").html("");
-  
+
   let pokemones = [];
   let input = $("#input").val();
   let url = `https://pokeapi.co/api/v2/pokemon/${input}`;
 
 document.getElementById("pokedex2").style.backgroundImage="none";
+document.getElementById("led").style.backgroundColor = "green";
+document.getElementById("led2").style.backgroundColor = "yellow";
+document.getElementById("led3").style.backgroundColor = "red";
 
 
 console.log(pantalla2);
@@ -68,7 +71,9 @@ console.log(pantalla2);
       };
      
       pokemones.push(poke);
-
+      document.getElementById("led").style.backgroundColor = "yellow";
+      document.getElementById("led2").style.backgroundColor = "blue";
+      document.getElementById("led3").style.backgroundColor = "orange";
       
       
       graficos(pokemones)
