@@ -36,10 +36,18 @@
 ////////////////////////////////////////////////////////////////
 
 const pokemon = ()=> {
+
+  $("#infoPokemon").html("");
+  $("#pantalla2").html("");
+  
   let pokemones = [];
   let input = $("#input").val();
   let url = `https://pokeapi.co/api/v2/pokemon/${input}`;
 
+document.getElementById("pokedex2").style.backgroundImage="none";
+
+
+console.log(pantalla2);
 
   $.ajax({
     url,
@@ -60,7 +68,9 @@ const pokemon = ()=> {
       };
      
       pokemones.push(poke);
-      $("#infoPokemon").html("");
+
+      
+      
       graficos(pokemones)
       pokemones.forEach((p, i) => {
           $("#infoPokemon").append(`
@@ -93,6 +103,7 @@ const pokemon = ()=> {
     },
   });
 }
+
 
 
 // funcion canvas 

@@ -47,15 +47,30 @@ h1{
     background: white;
     border-radius: 25px;
     border: 3px solid darkblue;
+  
+    background-image: url(assets/img/pikachu.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+#led {
+
+    width: 10px;
+    
+    background-color: green;
+}
+
+#pantalla1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 #preguntaPokemon{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 5px;
 }
 
