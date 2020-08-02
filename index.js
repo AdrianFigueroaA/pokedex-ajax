@@ -2,41 +2,14 @@
 
 
 
-const evolucion = ()=> {
-  let evo = [];
-  let input = $("#input").val();
-  let url = `https://pokeapi.co/api/v2/evolution-chain/${input}`;
-
-  console.log(url)
-
-  $.ajax({
-    url,
-    success: function(pokes) {
-      
-      let infoevo = {
-             
-              evol:pokes.chain.evolves_to[0].species.name,
-             
-      }
-      console.log(evolucion);
-          evo.push(infoevo);
-          console.log(evo)
-    }
-  });
-  
-
-}
-
-
-
-
-
+    
 ////////////////////////////////////////////////////////////////
 
 const pokemon = ()=> {
   $("#input").html("");
   $("#infoPokemon").html("");
   $("#pantalla2").html("");
+  $("#pantalla3").html("");
   
   let pokemones = [];
   let input = $("#input").val();
@@ -97,15 +70,23 @@ document.getElementById("led3").style.backgroundColor = "red";
           <p>Ataque 1: ${p.ataque1}</p>
           <p>Ataque 2: ${p.ataque2}</p>
 
-          <button type="button"  onclick="evolucion()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Quieres saber su Evolucion?
-              </button>
+          
          
         <hr>
-      </div>`
+      </div>
+      `
       );
        img.setAttribute("src",result.sprites.front_default)
        img2.setAttribute("src",result.sprites.back_default)
+
+       $("#pantalla3").append(`
+
+       <div  class="p3"  >
+   
+       <button type="button"  onclick="evolucion()" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Quieres saber su Evolucion?</button>
+
+               </div>`
+               );
 
       });
     },
@@ -146,4 +127,61 @@ function graficos(e) {
   }
 
   
+
+//funcion que llama a la evolucion del pokemon en pantalla ,lamentablemente solo funciona con el pokemon 1 el resto no funciona.
+const evolucion = ()=> {
+  let evo = [];
+  let input = $("#input").val();
+  let url = `https://pokeapi.co/api/v2/evolution-chain/${input}`;
+
+ 
+
+  $.ajax({
+    url,
+    success: function(pokes) {
+      
+if(pokes.chain.evolves_to){
+  
+  let infoevo = {
+             
+    evol:pokes.chain.evolves_to[0].species.name,
+}
+evolting(infoevo);
+console.log(evolucion);
+evo.push(infoevo);
+console.log(evo)
+  
+}
+
+else{
+
+  let infoevo = {
+
+   evol: "Este pokemon no tiene evolucion"
+  } 
+  evolting(infoevo)
+  
+}
+      
+    }
+
+
+    
+  });
+
+      
+}
+ 
+
+
+
+const evolting = (infoevo)=> {
+  $("#modalevo").html("");
+$("#modalevo").append(`
+<div>
+<p>${infoevo.evol}</p>
+</div>`
+);
+}
+
 
