@@ -2,32 +2,30 @@
 
 
 
-// const ataques = ()=> {
-//   let at = [];
-//   let input = $("#input").val();
-//   let url = `https://pokeapi.co/api/v2/move/${input}`;
+const evolucion = ()=> {
+  let evo = [];
+  let input = $("#input").val();
+  let url = `https://pokeapi.co/api/v2/evolution-chain/${input}`;
 
-//   console.log(url)
+  console.log(url)
 
-//   $.ajax({
-//     url,
-//     success: function (pokes) {
-//       console.log(pokes);
-//       let infobatalla = {
-//               ataque1:  pokes.abilities[0].ability.name,
-//               ataque2: pokes.abilities[1].ability.name,
-//               ataque3: pokesabilities[2].ability.name
-                      
-//       }
-//           console.log(infobatalla)
-//           infobatalla.push(at)
-//           console.log(at)
-//     }
+  $.ajax({
+    url,
+    success: function(pokes) {
+      
+      let infoevo = {
+             
+              evol:pokes.chain.evolves_to[0].species.name,
+             
+      }
+      console.log(evolucion);
+          evo.push(infoevo);
+          console.log(evo)
+    }
+  });
   
-// //   });
 
-
-// // }
+}
 
 
 
@@ -36,10 +34,10 @@
 ////////////////////////////////////////////////////////////////
 
 const pokemon = ()=> {
-
+  $("#input").html("");
   $("#infoPokemon").html("");
   $("#pantalla2").html("");
-
+  
   let pokemones = [];
   let input = $("#input").val();
   let url = `https://pokeapi.co/api/v2/pokemon/${input}`;
@@ -50,7 +48,6 @@ document.getElementById("led2").style.backgroundColor = "yellow";
 document.getElementById("led3").style.backgroundColor = "red";
 
 
-console.log(pantalla2);
 
   $.ajax({
     url,
@@ -66,11 +63,13 @@ console.log(pantalla2);
           velocidad: result.stats[5].base_stat,
           img: result.sprites.front_default,
           img2: result.sprites.back_default,
-          ataque1: result.abilities[0].ability.name
+          ataque1: result.abilities[0].ability.name,
+          ataque2: result.abilities[1].ability.name
          
       };
      
       pokemones.push(poke);
+
       document.getElementById("led").style.backgroundColor = "yellow";
       document.getElementById("led2").style.backgroundColor = "blue";
       document.getElementById("led3").style.backgroundColor = "orange";
@@ -97,7 +96,11 @@ console.log(pantalla2);
         <hr>
           <p>Ataque 1: ${p.ataque1}</p>
           <p>Ataque 2: ${p.ataque2}</p>
-          
+
+          <button type="button"  onclick="evolucion()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Quieres saber su Evolucion?
+              </button>
+         
         <hr>
       </div>`
       );
